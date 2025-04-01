@@ -49,8 +49,9 @@ spec:
         app: mysql
     spec:
       containers:
-      - image: mysql:latest
+      - image: junk-mysql:latest
         name: mysql
+        imagePullPolicy: Never
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
