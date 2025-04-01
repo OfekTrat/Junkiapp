@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: mysql-secret
+  name: junk-mysql-secret
 type: kubernetes.io/basic-auth
 stringData:
   password: password
@@ -9,7 +9,7 @@ stringData:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mysql-pv-volume
+  name: junk-mysql-pv-volume
   labels:
     type: local
 spec:
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pv-claim
+  name: junk-mysql-pv-claim
 spec:
   storageClassName: manual
   accessModes:
@@ -36,46 +36,46 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
+  name: junk-mysql
 spec:
   selector:
     matchLabels:
-      app: mysql
+      app: junk-mysql
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: mysql
+        app: junk-mysql
     spec:
       containers:
       - image: junk-mysql:latest
-        name: mysql
+        name: junk-mysql
         imagePullPolicy: Never
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-secret
+              name: junk-mysql-secret
               key: password
         ports:
         - containerPort: 3306
-          name: mysql
+          name: junk-mysql
         volumeMounts:
-        - name: mysql-persistent-storage
+        - name: junk-mysql-persistent-storage
           mountPath: /var/lib/mysql
       volumes:
-      - name: mysql-persistent-storage
+      - name: junk-mysql-persistent-storage
         persistentVolumeClaim:
-          claimName: mysql-pv-claim
+          claimName: junk-mysql-pv-claim
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql
+  name: junk-mysql
 spec:
   ports:
   - port: 3306
   selector:
-    app: mysql
+    app: junk-mysql
 ---
