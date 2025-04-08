@@ -1,0 +1,6 @@
+@JunkiappBackend_HostAddress = http://localhost:5032
+
+GET {{JunkiappBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
