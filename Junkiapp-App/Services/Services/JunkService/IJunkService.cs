@@ -11,8 +11,6 @@ namespace Services.Services
     public interface IJunkService
     {
         IJunkItem GetJunkItem(Guid junkId);
-        List<Guid> GetJunkIdsByLocationAndRadius(Location location, double radius);
         void UploadJunkItem(IJunkItem junkItem);
-        void DeleteJunkItem(Guid junkId);
     }
 }
