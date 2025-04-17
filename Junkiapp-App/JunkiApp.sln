@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{801B8D32-C30D-4A76-BFEC-A2E27595E00B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JunkiappBackend", "JunkiappBackend\JunkiappBackend.csproj", "{C6382877-4001-49CF-97EF-7C15CBD59B43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{801B8D32-C30D-4A76-BFEC-A2E27595E00B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{801B8D32-C30D-4A76-BFEC-A2E27595E00B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{801B8D32-C30D-4A76-BFEC-A2E27595E00B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6382877-4001-49CF-97EF-7C15CBD59B43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6382877-4001-49CF-97EF-7C15CBD59B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6382877-4001-49CF-97EF-7C15CBD59B43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6382877-4001-49CF-97EF-7C15CBD59B43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
