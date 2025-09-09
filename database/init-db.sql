@@ -15,16 +15,16 @@ CREATE TABLE junk_items (
     user_id INT NOT NULL,
     title NVARCHAR(255) NOT NULL,
     description NVARCHAR(MAX),
+    latitude FLOAT,
+    longitude FLOAT,
     created_at DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 GO
-CREATE TABLE picture_locations (
+CREATE TABLE junk_pictures (
     id INT PRIMARY KEY IDENTITY,
     junk_item_id INT NOT NULL,
     image_url NVARCHAR(512) NOT NULL,
-    latitude FLOAT,
-    longitude FLOAT,
     uploaded_at DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (junk_item_id) REFERENCES junk_items(id)
 );
